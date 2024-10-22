@@ -1,0 +1,30 @@
+.view-specialization {
+  display: flex;
+  /* min-height: 100vh; */
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.add-specialization {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.specialization-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.specialization-list ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

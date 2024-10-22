@@ -1,0 +1,93 @@
+/* Container for the entire registration form */
+.registration-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form elements spacing and layout */
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Heading style */
+  .registration-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Label styling */
+  .registration-form label {
+    margin: 10px 0 5px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Input fields styling */
+  .registration-form input[type="text"],
+  .registration-form input[type="email"],
+  .registration-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* Checkbox styling */
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .checkbox-container input {
+    margin-right: 10px;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Submit button styling */
+  .registration-form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .registration-form button:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    .registration-container {
+      width: 90%;
+      padding: 15px;
+    }
+  }
+  
+  /* Focus styling for inputs */
+  .registration-form input:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }

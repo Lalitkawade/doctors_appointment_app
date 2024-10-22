@@ -1,0 +1,30 @@
+
+[ 
+    {
+      "id": 1,
+      "name": "Dr. John Doe",
+      "email": "john.doe@example.com",
+      "mobile": "(987) 654-3210",
+      "speciality": "Cardiology",
+      "details": "Lorem ipsum dolor sit amet. Vel earum aperiam ad nihil quia et dolores enim et corporis quam. Ea saepe possimus At corporis earum in earum molestias ea ducimus blanditiis est aperiam aliquam a tempora consequuntur. Et voluptatem voluptates qui facilis debitis vel voluptas facere vel dolorum blanditiis. Ad voluptate architecto ea accusantium fugiat ad quas nihil et perferendis delectus id explicabo velit!",
+      "profilePicture": "Doctor.jpg"
+    },
+    {
+      "id": 2,
+    "name": "Dr. Jane Smith",
+    "email": "jane.smith@example.com",
+    "mobile": "(987) 654-3210",
+    "speciality": "Dermatology",
+    "details": "Lorem ipsum dolor sit amet. Vel earum aperiam ad nihil quia et dolores enim et corporis quam. Ea saepe possimus At corporis earum in earum molestias ea ducimus blanditiis est aperiam aliquam a tempora consequuntur. Et voluptatem voluptates qui facilis debitis vel voluptas facere vel dolorum blanditiis. Ad voluptate architecto ea accusantium fugiat ad quas nihil et perferendis delectus id explicabo velit!",
+    "profilePicture": "Doctor.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Emily Johnson",
+        "email": "emily.johnson@example.com",
+        "mobile": "(987) 654-3210",
+        "speciality": "Dermatology",
+        "details": "Lorem ipsum dolor sit amet. Vel earum aperiam ad nihil quia et dolores enim et corporis quam. Ea saepe possimus At corporis earum in earum molestias ea ducimus blanditiis est aperiam aliquam a tempora consequuntur. Et voluptatem voluptates qui facilis debitis vel voluptas facere vel dolorum blanditiis. Ad voluptate architecto ea accusantium fugiat ad quas nihil et perferendis delectus id explicabo velit!",
+        "profilePicture": "Doctor.jpg"
+    }
+  ]

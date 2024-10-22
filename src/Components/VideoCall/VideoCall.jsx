@@ -6,7 +6,6 @@ import './VideoCall.css'; // Import the CSS file
 
 const VideoCall = () => {
   const [username, setUsername] = useState('');
-  const [roomId, setRoomId] = useState('');
   const [isCameraOn, setIsCameraOn] = useState(false);
   const [isMicOn, setIsMicOn] = useState(true);
   const [stream, setStream] = useState(null);
@@ -43,8 +42,8 @@ const VideoCall = () => {
   }, []);
 
   const handleJoinRoom = async () => {
-    if (!username || !roomId) {
-      setError('Please enter both username and room ID');
+    if (!username) {
+      setError('Please enter a username');
       return;
     }
 
@@ -56,14 +55,15 @@ const VideoCall = () => {
         video: true,
         audio: true
       });
-      
+
       setStream(mediaStream);
       userVideo.current.srcObject = mediaStream;
       setIsCameraOn(true);
-      
-      socketRef.current.emit('join-room', roomId, username);
+
+      // Emit join-room event with username only, server will generate a room ID
+      socketRef.current.emit('join-room', username);
       setParticipantCount(prev => prev + 1);
-      
+
     } catch (err) {
       console.error('Error accessing media devices:', err);
       setError('Failed to access camera/microphone');
@@ -97,12 +97,12 @@ const VideoCall = () => {
     setStream(null);
     setIsCameraOn(false);
     setIsMicOn(true);
-    socketRef.current.emit('leave-room', roomId);
+    socketRef.current.emit('leave-room', username); // Emit leave with username
     setParticipantCount(prev => Math.max(0, prev - 1));
   };
 
   const copyLink = () => {
-    const shareLink = `${window.location.origin}/video-call/${roomId}`;
+    const shareLink = `${window.location.origin}/video-call/${username}`; // Updated link format
     navigator.clipboard.writeText(shareLink);
     setCopySuccess(true);
     setTimeout(() => setCopySuccess(false), 2000);
@@ -117,7 +117,7 @@ const VideoCall = () => {
             {error}
           </div>
         )}
-        
+
         <div className="grid">
           {/* Video area */}
           <div className="video-area">
@@ -127,13 +127,13 @@ const VideoCall = () => {
                 <span>Connecting...</span>
               </div>
             )}
-            
+
             {!isCameraOn && !isConnecting && (
               <div className="camera-off-message">
                 Camera is off
               </div>
             )}
-            
+
             <video
               ref={userVideo}
               autoPlay
@@ -141,28 +141,28 @@ const VideoCall = () => {
               muted
               className={`video ${!isCameraOn ? 'hidden' : ''}`}
             />
-            
+
             {/* Participant count */}
             <div className="participant-count">
               <Users size={16} className="participant-icon" />
               <span>{participantCount}</span>
             </div>
-            
+
             {/* Controls */}
             <div className="controls">
-              <button 
+              <button
                 className={`control-button ${isCameraOn ? 'camera-on' : 'camera-off'}`}
                 onClick={toggleCamera}
               >
                 <Camera size={20} />
               </button>
-              <button 
+              <button
                 className={`control-button ${isMicOn ? 'mic-on' : 'mic-off'}`}
                 onClick={toggleMic}
               >
                 <Mic size={20} />
               </button>
-              <button 
+              <button
                 className="control-button leave-call"
                 onClick={handleLeaveCall}
               >
@@ -183,15 +183,7 @@ const VideoCall = () => {
                 className="input"
                 disabled={isConnecting}
               />
-              <input
-                type="text"
-                placeholder="Room ID"
-                value={roomId}
-                onChange={(e) => setRoomId(e.target.value)}
-                className="input"
-                disabled={isConnecting}
-              />
-              <button 
+              <button
                 className={`join-button ${isConnecting ? 'disabled' : ''}`}
                 onClick={handleJoinRoom}
                 disabled={isConnecting}
@@ -202,19 +194,21 @@ const VideoCall = () => {
 
             <div className="share-link">
               <h3 className="share-link-title">Share the link</h3>
-              <div className="share-link-container">
-                <input
-                  readOnly
-                  value={`http://localhost:3000/video-call/${roomId}`}
-                  className="share-input"
-                />
-                <button
-                  className="copy-button"
-                  onClick={copyLink}
-                >
-                  <Copy size={16} />
-                  {copySuccess ? 'Copied!' : 'Copy'}
-                </button>
+              <div className='container'>
+                <p className='sub-heading' style={{"margin":"-5px 0 0 5px"}}>Personal Link</p>
+                <div className="share-link-container">
+                  <input
+                    readOnly
+                    value={`${window.location.origin}/video-call/${username}`} // Updated link for sharing
+                  />
+                  <button
+                    className="copy-button"
+                    onClick={copyLink}
+                  >
+                    <Copy size={16} />
+                    {/* {copySuccess ? 'Copied!' : 'Copy'} */}
+                  </button>
+                </div>
               </div>
             </div>
           </div>

@@ -1,0 +1,81 @@
+/* Header.css */
+
+/* Header Styles */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.header-top {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Center items vertically */
+    padding: 10px 0 10px 0; /* Padding for spacing */
+    background-color: #d71e1e; /* Optional: background color */
+    width: 100%; /* Ensure it takes full width */
+}
+
+.schedule-item {
+    margin-right: 20px; /* Space between schedule items */
+    text-align: center; /* Align text to the left */
+}
+
+.day {
+   
+    color: #ffffff; /* Optional: darker color for time */
+}
+
+.time {
+    display: block; /* Display time on a new line */
+    font-size: 0.9em; /* Optional: smaller font for time */
+    color: #ffffff; /* Optional: darker color for time */
+}
+
+/* Navigation Bar Styles */
+.header-nav {
+    display: flex;
+    justify-content: flex-end; /* Keep other links to the right */
+    align-items: center;
+    gap: 15px; /* Space between links */
+    background-color: white; /* Background color for the nav */
+    padding: 10px 10px 10px 0; /* Padding for spacing */
+    width: 100%; /* Full width */
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2); /* Bottom shadow */
+}
+
+/* Sehat Logo Styles */
+.header-nav p {
+    margin: 0; /* Remove default margin */
+    padding-left: 20px; /* Left padding for Sehat */
+    font-weight: bold; /* Optional: make Sehat bold */
+    flex-grow: 1; /* Take up remaining space to push the links to the right */
+    color: rgb(18, 83, 247);
+    font-size: larger;
+}
+
+
+/* Link Styles */
+.header-nav a {
+    text-decoration: none; /* Remove underline from links */
+    
+    font-weight: bold; /* Bold text */
+}
+
+/* Book Appointment Link Styles */
+.book-appointment-link {
+    background-color: #007bff; /* Blue background color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding for spacing */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Hover Effect for Book Appointment Link */
+.book-appointment-link:hover {
+    background-color: #002fff; /* Darker blue on hover */
+}
+
+
+

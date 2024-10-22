@@ -1,0 +1,46 @@
+.slot-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slot-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .slot-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .slot-form input,
+  .slot-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .radio-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .slot-form button {
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .slot-form button:hover {
+    background-color: #45a049;
+  }

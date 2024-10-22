@@ -1,0 +1,144 @@
+.video-call-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.content {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  background-color: #ffffff;
+  height: auto;
+}
+
+.video-area {
+  position: relative;
+  background-color: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.camera-off-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.controls {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+}
+
+.control-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.join-room {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.join-room-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.join-room-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input {
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.join-button {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: bold;
+}
+
+.share-link {
+  margin-top: 20px;
+}
+
+.share-link-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.container {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background-color: #f9fafb;
+  width: 300px;
+}
+
+.share-link-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.share-link-container input {
+  flex-grow: 1;
+  padding: 4px;
+  border: none;
+  background-color: transparent;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0056b3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.copy-button:hover {
+  color: #003d82;
+}

@@ -1,0 +1,77 @@
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  height: auto;
+}
+
+.footer-social-icons {
+  display: flex;
+  justify-content: space-between; /* Aligns items to left and right */
+  align-items: center; /* Vertically center the text and icons */
+  margin: 20px;
+  border-bottom: 1px solid #fff; /* The line after the icons */
+ 
+}
+
+.social-icons a {
+  color: #fff; /* Adjust icon color */
+  text-decoration: none;
+  font-size: 24px; /* Adjust icon size */
+}
+
+.social-icons {
+  display: flex; /* Ensures icons are inline */
+}
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Ensures equal space between columns */
+  max-width: 1200px; /* Limit width to center content */
+  margin: 0 auto; /* Center the content */
+  padding: 0 20px; /* Add padding for equal gaps on both sides */
+}
+
+.footer-column {
+  flex: 1;
+  margin: 0 15px; /* Adjust column spacing */
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .footer-column {
+    margin: 15px 0;
+  }
+}

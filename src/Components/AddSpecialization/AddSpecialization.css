@@ -1,0 +1,13 @@
+.add-specialization-page {
+    display: flex;
+  }
+  
+  .content {
+    margin-left: 20px; /* Adjust according to the sidebar width */
+    padding: 20px;
+    flex-grow: 1; /* Allow the content to take the remaining space */
+  }
+  
+  .add-specialization-form {
+    margin-top: 20px;
+  }

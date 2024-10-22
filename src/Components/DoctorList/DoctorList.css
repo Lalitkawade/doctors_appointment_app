@@ -1,0 +1,50 @@
+.doctor-list-page table th{
+    color: #0e0e0e;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+.doctor-list-page tr{
+    border-bottom: 1px solid #eddede;
+}
+.doctor-list-page tbody tr:last-child{
+    border-bottom: 0;
+}
+.doctor-list-page thead{
+    border-top: 1px solid #eddede;
+}
+.doctor-list-page tbody tr td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+.doctor-list-page tbody img{
+    width: 100% !important;
+    object-fit: cover;
+}
+.edit-view{
+    margin-top: 50px;
+}
+.detail-box{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eddede;
+}
+.detail-box img{
+    border-radius: 50%;
+    width: 200px;
+}
+.img-circle{text-align: center;    padding-top: 20px;}
+.doctor-detail{
+    padding: 20px;
+}
+.doct-name {
+    background: #0d6efd;
+    color: #fff;
+    padding: 10px;
+}
+.edit-view label{
+    margin-bottom: 0;
+}
