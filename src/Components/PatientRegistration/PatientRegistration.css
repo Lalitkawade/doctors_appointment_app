@@ -10,17 +10,17 @@
   }
   
   /* Form elements spacing and layout */
-  .registration-form {
+  /* .registration-form {
     display: flex;
     flex-direction: column;
-  }
+  } */
   
   /* Heading style */
-  .registration-form h2 {
+  /* .registration-form h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
-  }
+  } */
   
   /* Label styling */
   .registration-form label {

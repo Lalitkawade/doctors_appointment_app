@@ -49,31 +49,32 @@ const AdminRegistration = () => {
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (validateForm()) {
-      // Save form data to localStorage
-      const existingAdmins = JSON.parse(localStorage.getItem('admins')) || [];
-      const updatedAdmins = [...existingAdmins, formData];
-      localStorage.setItem('admins', JSON.stringify(updatedAdmins));
-      
-      // Handle successful form submission
-      console.log('Form submitted:', formData);
-      alert('Registration successful!');
   
-      // Clear the form after submission
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-      });
-      // Navigate to the Admin Login page after successful registration
-      navigate('/admin-login'); // Redirect to AdminLoginForm page
+    if (validateForm()) {
+      try {
+        const response = await fetch('https://admin/admin-registration', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+  
+        if (response.ok) {
+          alert('Admin registered successfully!');
+          navigate('/admin-login');
+        } else {
+          alert('Registration failed. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error registering admin:', error);
+        alert('An error occurred during registration.');
+      }
     }
   };
+  
   
   return (
     <div className="registration-container">

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 import './PatientRegistration.css';
+
+
 const PatientRegistration = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -19,47 +21,39 @@ const PatientRegistration = () => {
       [name]: type === 'checkbox' ? checked : value,
     });
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Basic password matching validation
-    if (formData.password !== formData.confirmPassword) {
-      setErrorMessage('Passwords do not match.');
-      return;
-    }
-    // Prepare the data to store in localStorage
-    const { firstName, lastName, email, password, rememberMe } = formData;
-    const userData = {
-      firstName,
-      lastName,
-      email,
-      password, // Store the password for validation
-      rememberMe,
-    };
-    try {
-      // Storing data in localStorage as a JSON string
-      localStorage.setItem('patientData', JSON.stringify(userData));
-      console.log('User data saved to localStorage:', userData);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (formData.password !== formData.confirmPassword) {
+    setErrorMessage('Passwords do not match.');
+    return;
+  }
+
+  try {
+    const response = await fetch('https://admin/patient-registration', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
       alert('Patient registered successfully!');
-      // Redirect to login page after registration
       navigate('/patient-login');
-      // Clear form after successful registration
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        rememberMe: false,
-      });
-      setErrorMessage('');
-    } catch (err) {
-      console.error('Failed to save data in localStorage:', err);
+    } else {
+      alert('Registration failed. Please try again.');
     }
-  };
+  } catch (error) {
+    console.error('Error registering patient:', error);
+    alert('An error occurred during registration.');
+  }
+};
+
   return (
     <div className="registration-container">
       <form onSubmit={handleSubmit} className="registration-form">
-        <h2>Patient Registration</h2>
+        <h2 style={{color:"#d9534f"}}>Patient Registration</h2>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         <label>First Name:</label>
         <input
@@ -68,7 +62,7 @@ const PatientRegistration = () => {
           value={formData.firstName}
           onChange={handleChange}
           required
-          placeholder="Enter your first name"
+          
         />
         <label>Last Name:</label>
         <input
@@ -77,7 +71,7 @@ const PatientRegistration = () => {
           value={formData.lastName}
           onChange={handleChange}
           required
-          placeholder="Enter your last name"
+         
         />
         <label>Email (Username):</label>
         <input
@@ -86,7 +80,7 @@ const PatientRegistration = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          placeholder="Enter your email"
+         
         />
         <label>Password:</label>
         <input
@@ -95,7 +89,7 @@ const PatientRegistration = () => {
           value={formData.password}
           onChange={handleChange}
           required
-          placeholder="Enter your password"
+         
         />
         <label>Confirm Password:</label>
         <input
@@ -104,7 +98,7 @@ const PatientRegistration = () => {
           value={formData.confirmPassword}
           onChange={handleChange}
           required
-          placeholder="Confirm your password"
+         
         />
         <div className="checkbox-container">
           <label>

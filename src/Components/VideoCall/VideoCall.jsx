@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Camera, Mic, MoreHorizontal, PhoneOff, Copy, Users } from 'lucide-react';
 import io from 'socket.io-client';
 import Peer from 'simple-peer';
-import './VideoCall.css'; // Import the CSS file
+import './VideoCall.css'; 
 
 const VideoCall = () => {
   const [username, setUsername] = useState('');
